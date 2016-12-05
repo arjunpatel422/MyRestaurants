@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:appcompat="http://schemas.android.com/apk/res-auto"
+      xmlns:app="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/homeIcon"
+        android:icon="@drawable/home_icon"
+        android:title="@string/home_title"
+        android:orderInCategory="1"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/searchIcon"
+        android:icon="@drawable/search_icon"
+        android:title="@string/search_title"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom"
+        appcompat:actionViewClass="android.support.v7.widget.SearchView"
+        appcompat:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/editRestaurantIcon"
+        android:icon="@drawable/edit_icon"
+        android:title="@string/edit_restaurant_title"
+        android:orderInCategory="3"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/deleteRestaurantIcon"
+        android:icon="@drawable/delete_icon"
+        android:title="@string/delete_restaurant_title"
+        android:orderInCategory="4"
+        app:showAsAction="ifRoom"
+        />
+
+</menu>

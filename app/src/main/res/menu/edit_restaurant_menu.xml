@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:appcompat="http://schemas.android.com/apk/res-auto"
+      xmlns:app="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/homeIcon"
+        android:icon="@drawable/home_icon"
+        android:title="@string/home_title"
+        android:orderInCategory="1"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/action_settings_icon"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/searchIcon"
+        android:icon="@drawable/search_icon"
+        android:title="@string/search_title"
+        android:orderInCategory="2"
+        app:showAsAction="always"
+        appcompat:actionViewClass="android.support.v7.widget.SearchView"
+        appcompat:showAsAction="always"
+        />
+
+</menu>

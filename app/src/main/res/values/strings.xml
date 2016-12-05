@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MyRestaurants</string>
+    <string name="action_settings">Settings</string>
+    <string name="search_title">Search</string>
+    <string name="edit_restaurant_title">Edit</string>
+    <string name="delete_restaurant_title">Delete</string>
+    <string name="home_title">Home</string>
+    <string name="add_new_restaurant_title">Add New Restaurant</string>
+    <string name="import_restaurants_button">Import Restaurants</string>
+    <string name="import_export_title">Import and Export Restaurants</string>
+
+    <string name="search_hint">Search Term</string>
+    <string name="search_results_title">Search Results</string>
+
+
+    <string name="deselect_all_restaurants_button">Deselect All Restaurants</string>
+    <string name="select_all_restaurants_button">Select All Restaurants</string>
+    <string name="delete_selected_restaurants_button">Delete Selected Restaurants</string>
+    <string name="export_selected_restaurants_button">Export Selected Restaurants</string>
+
+    <string name="restaurants_text_view">Restaurants</string>
+    <string name="view_restaurant_text_view">View Restaurant</string>
+    <string name="export_restaurant_button">Export Restaurant</string>
+
+    <string name="minimum_rating_of_displayed_restaurants_text_view">Minimum Rating of Displayed Restaurants</string>
+    <string name="maximum_rating_of_displayed_restaurants_text_view">Maximum Rating of Displayed Restaurants</string>
+    <string-array name="ratings">
+        <item>0.0</item>
+        <item>0.5</item>
+        <item>1.0</item>
+        <item>1.5</item>
+        <item>2.0</item>
+        <item>2.5</item>
+        <item>3.0</item>
+        <item>3.5</item>
+        <item>4.0</item>
+        <item>4.5</item>
+        <item>5.0</item>
+    </string-array>
+
+    <string name="display_settings_text_view">Display Settings</string>
+    <string name="display_options_text_view">Display Options</string>
+    <string-array name="display_options">
+        <item>Alphabetically</item>
+        <item>By Rating</item>
+    </string-array>
+    <string name="display_order_text_view">Display Order</string>
+    <string-array name="display_order">
+        <item>Ascending</item>
+        <item>Descending</item>
+    </string-array>
+    <string-array name="parking">
+        <item>Available</item>
+        <item>Unavailable</item>
+    </string-array>
+
+    <string name="display_restaurants_with_parking_only_text_view">Display Restaurants With Parking Only</string>
+    <string name="displayed_food_types_text_view">Displayed Food Types</string>
+    <string name="select_all_food_types_button">Select All Food Types</string>
+    <string name="deselect_all_food_types_button">Deselect All Food Types</string>
+    <string name="save_display_settings_button">Save Display Settings</string>
+
+    <string name="save_restaurant_button">Save</string>
+    <string name="edit_restaurant_text_view">Edit Restaurant</string>
+    <string name="edit_restaurant_button">Edit</string>
+    <string name="add_restaurant_text_view">Add Restaurant</string>
+    <string name="restaurant_name_text_view">Restaurant Name</string>
+    <string name="food_type_text_view">Food Type</string>
+    <string name="restaurant_city_text_view">City</string>
+    <string name="restaurant_address_text_view">Address</string>
+    <string name="restaurant_phone_number_text_view">Phone Number</string>
+    <string name="date_visited_text_view">Date Visited</string>
+    <string name="restaurant_rating_text_view">Rating</string>
+    <string name="additional_comments_text_view">Additional Comments:</string>
+    <string name="restaurant_parking_text_view">Parking</string>
+
+
+    <string-array name="food_type">
+        <item>African</item>
+        <item>Afghan</item>
+        <item>American</item>
+        <item>Bakery</item>
+        <item>Bar</item>
+        <item>Barbecue</item>
+        <item>Brazilian</item>
+        <item>Breakfast</item>
+        <item>Buffet</item>
+        <item>Burger</item>
+        <item>Burmese</item>
+        <item>Cafe</item>
+        <item>Cajun</item>
+        <item>Caribbean</item>
+        <item>Chinese</item>
+        <item>Coffee</item>
+        <item>Columbian</item>
+        <item>Dessert</item>
+        <item>Dominican</item>
+        <item>Donut</item>
+        <item>English</item>
+        <item>Egyptian</item>
+        <item>Ethopian</item>
+        <item>Fast Food</item>
+        <item>Filipino</item>
+        <item>Fusion</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Haitian</item>
+        <item>Hawaiian</item>
+        <item>Hot Dog</item>
+        <item>Indian</item>
+        <item>Irish</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Korean</item>
+        <item>Lebanese</item>
+        <item>Malaysian</item>
+        <item>Mediterranean</item>
+        <item>Mexican</item>
+        <item>Mongolian</item>
+        <item>Moroccan</item>
+        <item>Pakistani</item>
+        <item>Persian</item>
+        <item>Peruvian</item>
+        <item>Pizza</item>
+        <item>Portuguese</item>
+        <item>Pub</item>
+        <item>Russian</item>
+        <item>Salad</item>
+        <item>Salvadoran</item>
+        <item>Sandwich</item>
+        <item>Smoothie</item>
+        <item>Soup</item>
+        <item>Spanish</item>
+        <item>Steakhouse</item>
+        <item>Tea</item>
+        <item>Thai</item>
+        <item>Turkish</item>
+        <item>Vegetarian</item>
+        <item>Vietnamese</item>
+        <item>Wine Bar</item>
+    </string-array>
+
+    <string name="import_restaurants_text_view">Import Restaurants</string>
+    <string name="select_all_files_button">Select All Files</string>
+    <string name="deselect_all_files_button">Deselect All Files</string>
+    <string name="import_selected_files_as_restaurants_button">Import Selected Files As Restaurants</string>
+    <string name="title_activity_base">BaseActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_search_restaurants">SearchRestaurants</string>
+
+</resources>

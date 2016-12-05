@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:appcompat="http://schemas.android.com/apk/res-auto"
+      xmlns:app="http://schemas.android.com/tools">
+
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/action_settings_icon"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/searchIcon"
+        android:icon="@drawable/search_icon"
+        android:title="@string/search_title"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom"
+        appcompat:actionViewClass="android.support.v7.widget.SearchView"
+        appcompat:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/addNewRestaurantIcon"
+        android:icon="@drawable/add_icon"
+        android:title="@string/add_new_restaurant_title"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"
+        />
+
+</menu>
