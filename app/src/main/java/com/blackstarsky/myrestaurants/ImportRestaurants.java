@@ -4,8 +4,8 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -73,12 +73,12 @@ class ImportRestaurants extends BaseActivity
         super.onCreate(savedInstanceState);
         databaseHandler = new DatabaseHandler(this);
         setContentView(R.layout.import_restaurants);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setToolbar(toolbar);
-        importRestaurantsListView = (ListView) findViewById(R.id.importRestaurantsListView);
-        selectAllFilesButton = (Button) findViewById(R.id.selectAllFilesButton);
-        deselectAllFilesButton = (Button) findViewById(R.id.deselectAllFilesButton);
-        importSelectedFilesAsRestaurantsButton = (Button) findViewById(
+        importRestaurantsListView = findViewById(R.id.importRestaurantsListView);
+        selectAllFilesButton = findViewById(R.id.selectAllFilesButton);
+        deselectAllFilesButton = findViewById(R.id.deselectAllFilesButton);
+        importSelectedFilesAsRestaurantsButton = findViewById(
                 R.id.importSelectedFilesAsRestaurantsButton);
         if (!externalStateReadable())
         {
@@ -164,15 +164,18 @@ class ImportRestaurants extends BaseActivity
         for(int position=0;position<directories.size();position++)
         {
             File[] foundFiles=directories.get(position).listFiles();
-            for (File currentFile : foundFiles)
+            if (foundFiles != null)
             {
-                if (currentFile.isDirectory())
+                for (File currentFile : foundFiles)
                 {
-                    directories.add(currentFile);
-                }
-                else if (currentFile.getName().endsWith(".txt"))
-                {
-                    allTextFiles.add(currentFile);
+                    if (currentFile.isDirectory())
+                    {
+                        directories.add(currentFile);
+                    }
+                    else if (currentFile.getName().endsWith(".txt"))
+                    {
+                        allTextFiles.add(currentFile);
+                    }
                 }
             }
         }
@@ -218,7 +221,7 @@ class ImportRestaurants extends BaseActivity
         }
         for (int position = 0; position < importRestaurantsListView.getChildCount(); position++)
         {
-            CheckBox fileCheckBox = (CheckBox) importRestaurantsListView.getChildAt(
+            CheckBox fileCheckBox = importRestaurantsListView.getChildAt(
                     position).findViewById(R.id.fileCheckBox);
             fileCheckBox.setChecked(selected);
         }
@@ -233,7 +236,7 @@ class ImportRestaurants extends BaseActivity
         }
         for (int position = 0; position < importRestaurantsListView.getChildCount(); position++)
         {
-            CheckBox fileCheckBox = (CheckBox) importRestaurantsListView.getChildAt(
+            CheckBox fileCheckBox = importRestaurantsListView.getChildAt(
                     position).findViewById(R.id.fileCheckBox);
             if (fileCheckBox.isChecked())
             {
@@ -306,7 +309,7 @@ class ImportRestaurants extends BaseActivity
         if (allTextFiles.size() > 0)
         {
 
-            importRestaurantsListView = (ListView) (findViewById(R.id.importRestaurantsListView));
+            importRestaurantsListView = findViewById(R.id.importRestaurantsListView);
             // A list adapter is used bridge between a ListView and
             // the ListViews data
 

@@ -3,8 +3,8 @@ package com.blackstarsky.myrestaurants;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -74,14 +74,14 @@ class RestaurantDisplaySettings extends BaseActivity
         setToolbar(toolbar);
         databaseHandler = new DatabaseHandler(this);
         // Initialize all Objects
-        linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
-        displayRestaurantsWithParkingOnlyCheckBox = (CheckBox) findViewById(
+        linearLayout = findViewById(R.id.linearLayout);
+        displayRestaurantsWithParkingOnlyCheckBox = findViewById(
                 R.id.displayRestaurantsWithParkingOnlyCheckBox);
-        displayOptionsSpinner = (Spinner) findViewById(R.id.displayOptionsSpinner);
-        displayOrderSpinner = (Spinner) findViewById(R.id.displayOrderSpinner);
-        selectAllFoodTypesButton = (Button) findViewById(R.id.selectAllFoodTypesButton);
-        deselectAllFoodTypesButton = (Button) findViewById(R.id.deselectAllFoodTypesButton);
-        saveDisplaySettingsButton = (Button) findViewById(R.id.saveDisplaySettingsButton);
+        displayOptionsSpinner = findViewById(R.id.displayOptionsSpinner);
+        displayOrderSpinner = findViewById(R.id.displayOrderSpinner);
+        selectAllFoodTypesButton = findViewById(R.id.selectAllFoodTypesButton);
+        deselectAllFoodTypesButton = findViewById(R.id.deselectAllFoodTypesButton);
+        saveDisplaySettingsButton = findViewById(R.id.saveDisplaySettingsButton);
         displaySettings = databaseHandler.getDisplaySettings("1");
         changeToUsableFormat();
         addListeners();
@@ -194,7 +194,7 @@ class RestaurantDisplaySettings extends BaseActivity
         int position;
         for (position = 0; position < linearLayout.getChildCount(); position++)
         {
-            CheckBox displayFoodTypeCheckBox = (CheckBox) linearLayout.getChildAt(
+            CheckBox displayFoodTypeCheckBox = linearLayout.getChildAt(
                     position).findViewById(R.id.displayFoodTypeCheckBox);
             displayFoodTypes[position].setDisplay(displayFoodTypeCheckBox.isChecked() ? "T" : "F");
         }

@@ -8,7 +8,7 @@
     android:orientation="horizontal"
     tools:context="com.blackstarsky.myrestaurants.SearchRestaurants">
 
-    <include layout="@layout/my_toobar"/>
+    <include layout="@layout/my_toolbar" />
 
     <TableRow
         android:id="@+id/tableRow1"

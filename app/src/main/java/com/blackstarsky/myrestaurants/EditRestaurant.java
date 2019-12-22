@@ -4,8 +4,8 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -69,19 +69,19 @@ class EditRestaurant extends BaseActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_restaurant);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setToolbar(toolbar);
         databaseHandler = new DatabaseHandler(this);
-        saveRestaurantButton = (Button) (findViewById(R.id.saveRestaurantButton));
-        restaurantName = (EditText) findViewById(R.id.restaurantName);
-        foodTypeSpinner = (Spinner) findViewById(R.id.foodTypeSpinner);
-        restaurantCity = (EditText) findViewById(R.id.restaurantCity);
-        restaurantAddress = (EditText) findViewById(R.id.restaurantAddress);
-        parkingSpinner = (Spinner) findViewById(R.id.parkingSpinner);
-        restaurantPhoneNumber = (EditText) findViewById(R.id.restaurantPhoneNumber);
-        dateVisited = (EditText) findViewById(R.id.dateVisited);
-        restaurantRatingBar = (RatingBar) findViewById(R.id.restaurantRatingBar);
-        additionalComments = (EditText) findViewById(R.id.additionalComments);
+        saveRestaurantButton = findViewById(R.id.saveRestaurantButton);
+        restaurantName = findViewById(R.id.restaurantName);
+        foodTypeSpinner = findViewById(R.id.foodTypeSpinner);
+        restaurantCity = findViewById(R.id.restaurantCity);
+        restaurantAddress = findViewById(R.id.restaurantAddress);
+        parkingSpinner = findViewById(R.id.parkingSpinner);
+        restaurantPhoneNumber = findViewById(R.id.restaurantPhoneNumber);
+        dateVisited = findViewById(R.id.dateVisited);
+        restaurantRatingBar = findViewById(R.id.restaurantRatingBar);
+        additionalComments = findViewById(R.id.additionalComments);
         Intent theIntent = getIntent();
         restaurant = databaseHandler.getRestaurantInfo(theIntent.getStringExtra("restaurantId"));
         restaurantName.setText(restaurant.getRestaurantName());
@@ -99,15 +99,15 @@ class EditRestaurant extends BaseActivity
     public
     void updateRestaurant()
     {
-        restaurantName = (EditText) findViewById(R.id.restaurantName);
-        foodTypeSpinner = (Spinner) findViewById(R.id.foodTypeSpinner);
-        restaurantCity = (EditText) findViewById(R.id.restaurantCity);
-        restaurantAddress = (EditText) findViewById(R.id.restaurantAddress);
-        parkingSpinner = (Spinner) findViewById(R.id.parkingSpinner);
-        restaurantPhoneNumber = (EditText) findViewById(R.id.restaurantPhoneNumber);
-        dateVisited = (EditText) findViewById(R.id.dateVisited);
-        restaurantRatingBar = (RatingBar) findViewById(R.id.restaurantRatingBar);
-        additionalComments = (EditText) findViewById(R.id.additionalComments);
+        restaurantName = findViewById(R.id.restaurantName);
+        foodTypeSpinner = findViewById(R.id.foodTypeSpinner);
+        restaurantCity = findViewById(R.id.restaurantCity);
+        restaurantAddress = findViewById(R.id.restaurantAddress);
+        parkingSpinner = findViewById(R.id.parkingSpinner);
+        restaurantPhoneNumber = findViewById(R.id.restaurantPhoneNumber);
+        dateVisited = findViewById(R.id.dateVisited);
+        restaurantRatingBar = findViewById(R.id.restaurantRatingBar);
+        additionalComments = findViewById(R.id.additionalComments);
         restaurant.setRestaurantName(restaurantName.getText().toString());
         if (!isValidName())
         {
@@ -218,13 +218,10 @@ class EditRestaurant extends BaseActivity
         String name = restaurant.getRestaurantName();
         for (int position = 0; position < name.length(); position++)
         {
-            Character testedCharacter = name.charAt(position);
-            switch (testedCharacter)
+            char testedCharacter = name.charAt(position);
+            if (testedCharacter != ' ')
             {
-                case ' ':
-                    break;
-                default:
-                    return true;
+                return true;
             }
         }
         return false;

@@ -6,8 +6,7 @@
              android:layout_height="match_parent"
              tools:context=".MainActivity">
 
-    <include layout="@layout/my_toobar"/>
-
+    <include layout="@layout/my_toolbar" />
 
     <TableRow
         android:id="@+id/tableRow1"

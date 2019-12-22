@@ -3,8 +3,8 @@ package com.blackstarsky.myrestaurants;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -83,17 +83,17 @@ class AddNewRestaurant extends BaseActivity
         databaseHandler = new DatabaseHandler(this);
         restaurant = new Restaurant();
         // Initialize all Objects
-        addNewRestaurantButton = (Button) (findViewById(R.id.addNewRestaurantButton));
+        addNewRestaurantButton = findViewById(R.id.addNewRestaurantButton);
         restaurant.setRestaurantRating("0.0");
-        restaurantName = (EditText) findViewById(R.id.restaurantName);
-        foodTypeSpinner = (Spinner) findViewById(R.id.foodTypeSpinner);
-        restaurantCity = (EditText) findViewById(R.id.restaurantCity);
-        restaurantAddress = (EditText) findViewById(R.id.restaurantAddress);
-        parkingSpinner = (Spinner) findViewById(R.id.parkingSpinner);
-        restaurantPhoneNumber = (EditText) findViewById(R.id.restaurantPhoneNumber);
-        dateVisited = (EditText) findViewById(R.id.dateVisited);
-        restaurantRatingBar = (RatingBar) findViewById(R.id.restaurantRatingBar);
-        additionalComments = (EditText) findViewById(R.id.additionalComments);
+        restaurantName = findViewById(R.id.restaurantName);
+        foodTypeSpinner = findViewById(R.id.foodTypeSpinner);
+        restaurantCity = findViewById(R.id.restaurantCity);
+        restaurantAddress = findViewById(R.id.restaurantAddress);
+        parkingSpinner = findViewById(R.id.parkingSpinner);
+        restaurantPhoneNumber = findViewById(R.id.restaurantPhoneNumber);
+        dateVisited = findViewById(R.id.dateVisited);
+        restaurantRatingBar = findViewById(R.id.restaurantRatingBar);
+        additionalComments = findViewById(R.id.additionalComments);
         addListeners();
     }
 
@@ -183,14 +183,11 @@ class AddNewRestaurant extends BaseActivity
         String name = restaurant.getRestaurantName();
         for (int position = 0; position < name.length(); position++)
         {
-            Character testedCharacter = name.charAt(position);
-            switch (testedCharacter)
-            {
-                case ' ':
-                    continue;
-                default:
-                    return true;
+            char testedCharacter = name.charAt(position);
+            if (testedCharacter == ' ') {
+                continue;
             }
+            return true;
         }
         return false;
     }

@@ -1,11 +1,11 @@
 package com.blackstarsky.myrestaurants;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 import java.lang.reflect.Method;
 
@@ -17,8 +17,8 @@ class BaseActivity extends AppCompatActivity
     private int m_menuId;
 
     @Override
-    protected
-    boolean onPrepareOptionsPanel(View view, Menu menu)
+    public
+    boolean onCreateOptionsMenu(Menu menu)
     {
         if (menu != null && menu.getClass().getSimpleName().equals("MenuBuilder"))
         {
@@ -34,7 +34,7 @@ class BaseActivity extends AppCompatActivity
                       "onMenuOpened...unable to set icons for overflow menu", e);
             }
         }
-        return super.onPrepareOptionsPanel(view, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     public

@@ -4,8 +4,8 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -77,13 +77,6 @@ class MainActivity extends BaseActivity
 
     @Override
     protected
-    boolean onPrepareOptionsPanel(View view, Menu menu)
-    {
-        return super.onPrepareOptionsPanel(view, menu);
-    }
-
-    @Override
-    protected
     void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -92,20 +85,20 @@ class MainActivity extends BaseActivity
         TableLayout layout = (TableLayout) myInflater.inflate(R.layout.main_activity, null);
         //layout.setBackgroundColor(getResources().getColor(R.color.egg_shell));
         setContentView(layout);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setToolbar(toolbar);
-        mainRestaurantsListView = (ListView) findViewById(R.id.mainRestaurantsListView);
+        mainRestaurantsListView = findViewById(R.id.mainRestaurantsListView);
         databaseHandler = new DatabaseHandler(getApplicationContext());
         computeDisplayArgs();
         databaseHandler.setDisplay(m_selection, m_selectionArgs, m_orderBy);
         restaurantList = databaseHandler.getAllRestaurants();
-        selectAllRestaurantsButton = (Button) findViewById(R.id.selectAllRestaurantsButton);
-        deselectAllRestaurantsButton = (Button) findViewById(R.id.deselectAllRestaurantsButton);
-        deleteSelectedRestaurantsButton = (Button) findViewById(
+        selectAllRestaurantsButton = findViewById(R.id.selectAllRestaurantsButton);
+        deselectAllRestaurantsButton = findViewById(R.id.deselectAllRestaurantsButton);
+        deleteSelectedRestaurantsButton = findViewById(
                 R.id.deleteSelectedRestaurantsButton);
-        exportSelectedRestaurantsButton = (Button) findViewById(
+        exportSelectedRestaurantsButton = findViewById(
                 R.id.exportSelectedRestaurantsButton);
-        importRestaurantsButton = (Button) findViewById(R.id.importRestaurantsButton);
+        importRestaurantsButton = findViewById(R.id.importRestaurantsButton);
         addListeners();
         updateListView();
     }
@@ -172,7 +165,7 @@ class MainActivity extends BaseActivity
         }
         for (int position = 0; position < mainRestaurantsListView.getChildCount(); position++)
         {
-            CheckBox restaurantCheckBox = (CheckBox) mainRestaurantsListView.getChildAt(
+            CheckBox restaurantCheckBox = mainRestaurantsListView.getChildAt(
                     position).findViewById(R.id.restaurantCheckBox);
             if (restaurantCheckBox.isChecked())
             {
@@ -238,7 +231,7 @@ class MainActivity extends BaseActivity
         }
         for (int position = 0; position < mainRestaurantsListView.getChildCount(); position++)
         {
-            CheckBox restaurantCheckBox = (CheckBox) mainRestaurantsListView.getChildAt(
+            CheckBox restaurantCheckBox = mainRestaurantsListView.getChildAt(
                     position).findViewById(R.id.restaurantCheckBox);
             if (restaurantCheckBox.isChecked())
             {
@@ -258,7 +251,7 @@ class MainActivity extends BaseActivity
         restaurantList = databaseHandler.getAllRestaurants();
         if (restaurantList.size() != 0)
         {
-            mainRestaurantsListView = (ListView) (findViewById(R.id.mainRestaurantsListView));
+            mainRestaurantsListView = (findViewById(R.id.mainRestaurantsListView));
             mainRestaurantsListView.setOnItemClickListener(new OnItemClickListener()
             {
 
@@ -266,7 +259,7 @@ class MainActivity extends BaseActivity
                 void onItemClick(AdapterView<?> parent, View view, int position, long id)
                 {
 
-                    restaurantId = (TextView) view.findViewById(R.id.restaurantId);
+                    restaurantId = view.findViewById(R.id.restaurantId);
 
                     viewRestaurant(restaurantId.getText().toString());
                 }

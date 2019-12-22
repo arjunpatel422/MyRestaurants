@@ -4,8 +4,8 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,12 +41,12 @@ class SearchRestaurants extends BaseActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_restaurants);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setToolbar(toolbar);
         databaseHandler = new DatabaseHandler(this);
         computeDisplayArgs();
         databaseHandler.setDisplay(m_selection,m_selectionArgs,m_orderBy);
-        searchRestaurantsListView = (ListView) findViewById(R.id.searchRestaurantsListView);
+        searchRestaurantsListView = findViewById(R.id.searchRestaurantsListView);
         handleIntent(getIntent());
     }
 
@@ -86,6 +86,7 @@ class SearchRestaurants extends BaseActivity
     protected
     void onNewIntent(Intent intent)
     {
+        super.onNewIntent(intent);
         handleIntent(intent);
     }
 
@@ -116,7 +117,7 @@ class SearchRestaurants extends BaseActivity
                     void onItemClick(AdapterView<?> parent, View view, int position, long id)
                     {
 
-                        TextView restaurantId = (TextView) view.findViewById(R.id.restaurantId);
+                        TextView restaurantId = view.findViewById(R.id.restaurantId);
                         viewRestaurant(restaurantId.getText().toString());
                     }
                 });
@@ -134,14 +135,10 @@ class SearchRestaurants extends BaseActivity
     {
         for (int position = 0; position < query.length(); position++)
         {
-            Character testedCharacter = query.charAt(position);
+            char testedCharacter = query.charAt(position);
             testedCharacter = Character.toLowerCase(testedCharacter);
-            switch (testedCharacter)
-            {
-                case ' ':
-                    continue;
-                default:
-                    return true;
+            if (testedCharacter != ' ') {
+                return true;
             }
         }
         return false;
