@@ -2,12 +2,10 @@ package com.blackstarsky.myrestaurants;
 
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
-import android.view.View;
-import androidx.appcompat.widget.Toolbar;
 
-import java.lang.reflect.Method;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.widget.Toolbar;
 
 public abstract
 class BaseActivity extends AppCompatActivity
@@ -20,21 +18,13 @@ class BaseActivity extends AppCompatActivity
     public
     boolean onCreateOptionsMenu(Menu menu)
     {
-        if (menu != null && menu.getClass().getSimpleName().equals("MenuBuilder"))
+        if(menu instanceof MenuBuilder)
         {
-            try
-            {
-                Method m = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE);
-                m.setAccessible(true);
-                m.invoke(menu, true);
-            }
-            catch (Exception e)
-            {
-                Log.e(getClass().getSimpleName(),
-                      "onMenuOpened...unable to set icons for overflow menu", e);
-            }
+            MenuBuilder menuBuilder = (MenuBuilder) menu;
+            menuBuilder.setOptionalIconsVisible(true);
         }
-        return super.onCreateOptionsMenu(menu);
+
+        return true;
     }
 
     public
@@ -59,12 +49,12 @@ class BaseActivity extends AppCompatActivity
         startActivity(changeDisplaySettingsIntent);
     }
 
-    /*public
+    public
     void search()
     {
         Intent searchIntent = new Intent(getApplicationContext(), SearchRestaurants.class);
         startActivity(searchIntent);
-    }*/
+    }
 
     public
     void importRestaurants()

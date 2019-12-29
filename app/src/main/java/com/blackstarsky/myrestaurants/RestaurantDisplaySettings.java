@@ -40,9 +40,9 @@ class RestaurantDisplaySettings extends BaseActivity
             case R.id.homeIcon:
                 callMainActivity();
                 break;
-            /*case R.id.searchIcon:
+            case R.id.searchIcon:
                 search();
-                break;*/
+                break;
             case R.id.addNewRestaurantIcon:
                 addNewRestaurant();
                 break;

@@ -49,9 +49,9 @@ class AddNewRestaurant extends BaseActivity
             case R.id.action_settings:
                 changeDisplaySettings();
                 break;
-            /*case R.id.searchIcon:
+            case R.id.searchIcon:
                 search();
-                break;*/
+                break;
             case R.id.homeIcon:
                 callMainActivity();
                 break;

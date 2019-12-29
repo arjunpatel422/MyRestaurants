@@ -1,13 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:appcompat="http://schemas.android.com/apk/res-auto">
 
-    tools:context=".MainActivity">
     <item
-        android:id="@+id/action_settings"
-        android:icon="@drawable/action_settings_icon"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        appcompat:showAsAction="ifRoom"
+        android:id="@+id/addNewRestaurantIcon"
+        android:icon="@drawable/add_icon"
+        android:title="@string/add_new_restaurant_title"
+        android:orderInCategory="1"
+        appcompat:showAsAction="always"
         />
 
     <item
@@ -20,10 +19,10 @@
         />
 
     <item
-        android:id="@+id/addNewRestaurantIcon"
-        android:icon="@drawable/add_icon"
-        android:title="@string/add_new_restaurant_title"
-        android:orderInCategory="1"
+        android:id="@+id/action_settings"
+        android:icon="@drawable/action_settings_icon"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
         appcompat:showAsAction="ifRoom"
         />
 

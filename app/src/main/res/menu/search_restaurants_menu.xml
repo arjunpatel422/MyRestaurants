@@ -16,7 +16,7 @@
         android:icon="@drawable/home_icon"
         android:title="@string/home_title"
         android:orderInCategory="2"
-        appcompat:showAsAction="always"
+        appcompat:showAsAction="ifRoom"
         />
 
 
@@ -33,7 +33,7 @@
         android:icon="@drawable/action_settings_icon"
         android:title="@string/action_settings"
         android:orderInCategory="100"
-        appcompat:showAsAction="ifRoom"
+        appcompat:showAsAction="always"
         />
 
 </menu>

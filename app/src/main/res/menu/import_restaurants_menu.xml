@@ -23,7 +23,7 @@
         android:id="@+id/addNewRestaurantIcon"
         android:icon="@drawable/add_icon"
         android:title="@string/add_new_restaurant_title"
-        android:orderInCategory="1"
+        android:orderInCategory="3"
         appcompat:showAsAction="ifRoom"
         />
 
